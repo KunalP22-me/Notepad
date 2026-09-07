@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Task</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 p-10 text-white flex flex-col items-start">
+        <a class="inline-block text-blue-500 mb-10" href="/">Go Back</a>
+        <div class="bg-zinc-800 p-6 rounded-lg max-w-md w-full border border-zinc-700">
+            <h1 class="text-2xl font-semibold text-red-500 mb-3">Delete Task</h1>
+            <p class="text-zinc-300 mb-6">
+                Are you sure you want to delete <span class="text-white font-semibold bg-zinc-900 px-2 py-1 rounded"><%= filename %></span>? This action cannot be undone.
+            </p>
+            <div class="flex gap-3">
+                <form action="/delete/<%= filename %>" method="post">
+                    <button type="submit" class="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white font-medium cursor-pointer">
+                        Yes, Delete
+                    </button>
+                </form>
+                <a href="/" class="px-4 py-2 rounded-lg bg-zinc-700 hover:bg-zinc-600 text-white font-medium inline-block">
+                    Cancel
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
